@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple JavaScript Card Project</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous" defer></script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <h1 class="text-center mt-3 fs-3">Shopping Cart</h1>
+
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-3">
+                <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-iphone-13-pro-max-graphite-2023?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1679072989055" class='img-fluid mx-auto d-block' width="250" alt="">
+                <h2 class="text-center text-muted">iPhone 14</h2>
+            </div>
+            <div class="col-md-4">
+               <div class="d-flex align-items-center justify-content-center">
+                <button onclick="handleProductChange('phone',false)" class="btn btn-danger m-2">Remove</button>
+                <input id="phone-count" type="text" class="form-control text-center" value="1">
+                <button onclick="handleProductChange('phone',true)" class="btn btn-success m-2">Add</button>
+               </div>
+            </div>
+            <div class="col-md-5">
+                <h2 class="text-center text-muted">$<span id="phone-total">1500</span></h2>
+            </div>
+        </div>
+
+
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-3">
+                <img src="https://assets.hardwarezone.com/img/2023/06/15-inch-macbook-air-intro.jpg" class='img-fluid mx-auto d-block' width="250" alt="">
+                <h2 class="text-center text-muted">Macbook Pro</h2>
+            </div>
+            <div class="col-md-4">
+               <div class="d-flex align-items-center justify-content-center">
+                <button onclick="handleProductChange('laptop',false)" class="btn btn-danger m-2">Remove</button>
+                <input id="laptop-count" type="text" class="form-control text-center" value="1">
+                <button onclick="handleProductChange('laptop',true)" class="btn btn-success m-2">Add</button>
+               </div>
+            </div>
+
+            <div class="col-md-5">
+                <h2 class="text-center text-muted">$<span id="laptop-total">1900</span></h2>
+            </div>
+
+        </div>
+
+        <div class="d-flex p-3 justify-content-between">
+            <div class="col-md-8">
+                <h2>Subtotal:</h2>
+                <h2>Tax:</h2>
+                <h2>Grand Total:</h2>
+            </div>
+            <div class="col-md-4">
+                <h2>$<span id="sub-total">3400</span></h2>
+                <h2>$<span id="tax-amount">0</span></h2>
+                <h2>$<span id="grand-total">3400</span></h2>
+            </div>
+
+        </div>
+        <button onclick="checkout()" class="btn btn-primary text-white my-2">Check Out</button>
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
